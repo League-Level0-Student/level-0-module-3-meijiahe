@@ -4,24 +4,44 @@
 package elseif;
 
 import javax.swing.JOptionPane;
+
+import org.jointheleague.graphical.robot.Robot;
+
 import java.awt.Color;
 
 public class RobotColorChooser {
 	public static void main(String[] args) {
-		//1. Create a new Robot
-		
-		//3. Ask the user what color they would like the robot to draw
-		
-		//5. Use an if/else statement to set the pen color that the user requested
 
-        //6. If the user doesn’t enter anything, choose a random color
+		// 1. Create a new Robot
+		Robot fish = new Robot();
+		int i = 0;
 
-        //7. Put a loop around your code so that you keep asking the user for more colors & drawing them
-		
-		//4. Set the pen width to 10
-		
-	    //2. Make the robot draw a shape (this will take more than one line of code)
+		String answer = JOptionPane.showInputDialog(null, "What color you would like to draw with robot?");
+		if (answer.equals("lightpurple")) {
+			fish.setPenColor(221, 221, 238);
+		} else if (answer.equals("lightblue")) {
+			fish.setPenColor(221, 238, 238);
+		}
+		fish.setPenWidth(10);
+		fish.penDown();
+		for (i = 0; i < 4; i++) {
 
+			fish.move(100);
+			fish.turn(90);
 
+			// 3. Ask the user what color they would like the robot to draw
+
+			// 5. Use an if/else statement to set the pen color that the user requested
+
+			// 6. If the user doesn’t enter anything, choose a random color
+
+			// 7. Put a loop around your code so that you keep asking the user for more
+			// colors & drawing them
+
+			// 4. Set the pen width to 10
+
+			// 2. Make the robot draw a shape (this will take more than one line of code)
+
+		}
 	}
 }
